@@ -34,11 +34,10 @@ The pipeline runs **fully offline** by default — no API keys, no network. Thre
 options:
 
 **Docker (one command):**
-```bash
-docker build -t aialib .
-docker run --rm -v "$PWD/out:/app/out" aialib
+​```bash
+docker run --rm -v "$PWD/out:/app/out" ghcr.io/aljaberi500/aialib:0.1.0
 # → out/threat_library.csv, out/threat_library.sqlite, out/threat_library.sarif
-```
+​```
 
 **Local make:**
 ```bash
