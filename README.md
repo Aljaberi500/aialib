@@ -175,7 +175,7 @@ If you use `aialib` or its threat library, please cite:
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.XXXXXXX},
-  url          = {https://github.com/<USER>/aialib}
+  url          = {https://github.com/aljaberi500/aialib}
 }
 ```
 

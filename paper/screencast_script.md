@@ -193,7 +193,7 @@ Each row is one continuous take. If you flub a line, restart that row only.
 
 ```
 aialib — An AI-Aware Threat Library for LLM-Generated Code
-Code (Apache 2.0): https://github.com/<USER>/aialib
+Code (Apache 2.0): https://github.com/aljaberi500/aialib
 Dataset (CC BY 4.0): same repo, sample_outputs/
 Zenodo: https://doi.org/10.5281/zenodo.XXXXXXX
 Paper (ASE '26 Tools & Datasets Track): see paper/paper.pdf
