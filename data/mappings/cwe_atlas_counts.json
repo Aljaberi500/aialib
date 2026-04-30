@@ -1,0 +1,17 @@
+{
+  "CWE-78": ["ATLAS:Prompt Injection"],
+  "CWE-89": ["ATLAS:Prompt Injection"],
+  "CWE-502": ["ATLAS:Data Poisoning"],
+  "CWE-377": ["ATLAS:Operational Oversight"],
+  "CWE-918": ["ATLAS:Command and Control"],
+  "CWE-362": ["ATLAS:Operational Oversight"],
+  "CWE-306": ["ATLAS:Model Operational Misuse"],
+  "CWE-829": ["ATLAS:Supply Chain Manipulation"],
+  "CWE-295": ["ATLAS:Operational Oversight"],
+  "CWE-20": ["ATLAS:Model Misuse"],
+  "CWE-116": ["ATLAS:Defense Evasion"],
+  "CWE-611": ["ATLAS:Supply Chain Manipulation"],
+  "CWE-276": ["ATLAS:Model Operational Misuse"],
+  "CWE-798": ["ATLAS:Sensitive Data Exposure"],
+  "CWE-400": ["ATLAS:Operational Oversight"]
+}

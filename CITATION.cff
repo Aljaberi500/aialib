@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "aialib: An AI-Aware Threat Library and Generator-Detector Pipeline for LLM-Generated Code"
+message: "If you use this software or dataset, please cite it as below."
+type: software
+authors:
+  - given-names: Ali
+    family-names: Aljaberi
+    affiliation: "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)"
+    email: aljabriali500@gmail.com
+repository-code: "https://github.com/<USER>/aialib"
+url: "https://github.com/<USER>/aialib"
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-05-11"
+keywords:
+  - large language models
+  - software security
+  - vulnerability dataset
+  - static analysis
+  - MITRE ATLAS
+  - CWE
+  - CI/CD
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+    description: "Zenodo archive of the v0.1.0 release."
+preferred-citation:
+  type: article
+  title: "aialib: An AI-Aware Threat Library and Generator-Detector Pipeline for LLM-Generated Code"
+  authors:
+    - given-names: Ali
+      family-names: Aljaberi
+  year: 2026
+  conference:
+    name: "ACM/IEEE International Conference on Automated Software Engineering (ASE 2026), Tools and Datasets Track"

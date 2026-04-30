@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aialib"
+version = "0.1.0"
+description = "Reproducible AI-aware threat library and generator-detector pipeline for LLM-generated code."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "AI Threat Library Team" }
+]
+keywords = ["security", "ai", "static-analysis", "threat-library"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Security",
+  "Intended Audience :: Information Technology"
+]
+
+[project.urls]
+Homepage = "https://github.com/<USER>/aialib"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false

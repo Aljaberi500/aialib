@@ -1,0 +1,14 @@
+version: "2024.1"
+source: "https://atlas.mitre.org/techniques"
+techniques:
+  - ATLAS:Model Misuse
+  - ATLAS:Sensitive Data Exposure
+  - ATLAS:Operational Oversight
+  - ATLAS:Prompt Injection
+  - ATLAS:Data Poisoning
+  - ATLAS:Supply Chain Manipulation
+  - ATLAS:Model Operational Misuse
+  - ATLAS:Supply Chain Compromise
+  - ATLAS:Defense Evasion
+  - ATLAS:Discovery
+  - ATLAS:Command and Control

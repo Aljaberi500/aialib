@@ -1,0 +1,17 @@
+[
+  "requests",
+  "numpy",
+  "pandas",
+  "boto3",
+  "flask",
+  "fastapi",
+  "psycopg2",
+  "PyYAML",
+  "dill",
+  "mysql-connector-python",
+  "sqlite-utils",
+  "xmltodict",
+  "uvicorn",
+  "starlette",
+  "scikit-learn"
+]

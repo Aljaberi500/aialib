@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-Aware Threat Library Entry",
+  "type": "object",
+  "required": [
+    "vuln_id",
+    "language",
+    "generator",
+    "prompt_id",
+    "completion_id",
+    "cwe_id",
+    "owasp_tag",
+    "severity",
+    "sink_api",
+    "ai_cause",
+    "propagation_vector",
+    "human_ai_factor",
+    "atlas_techniques",
+    "detection_tools",
+    "validation_level",
+    "mitigation_short",
+    "evidence_ref",
+    "notes",
+    "normalized_token_hash",
+    "ast_hash",
+    "review_status"
+  ],
+  "properties": {
+    "vuln_id": {"type": "string"},
+    "language": {"type": "string"},
+    "generator": {"type": "string"},
+    "prompt_id": {"type": "string"},
+    "completion_id": {"type": "string"},
+    "cwe_id": {"type": "string"},
+    "owasp_tag": {"type": "string"},
+    "severity": {"type": "string"},
+    "sink_api": {"type": "string"},
+    "ai_cause": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "propagation_vector": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "human_ai_factor": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "atlas_techniques": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "detection_tools": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "validation_level": {"type": "string", "enum": ["static_only", "manually_reviewed", "sandbox_validated"]},
+    "mitigation_short": {"type": "string"},
+    "evidence_ref": {"type": "string"},
+    "notes": {"type": ["string", "null"]},
+    "prompt_text": {"type": ["string", "null"]},
+    "rule_id": {"type": ["string", "null"]},
+    "normalized_token_hash": {"type": "string"},
+    "ast_hash": {"type": "string"},
+    "review_status": {
+      "type": "string",
+      "enum": ["unreviewed", "verified_true", "false_positive", "disputed"]
+    },
+    "reviewer_id": {"type": ["string", "null"]},
+    "review_timestamp": {"type": ["string", "null"]},
+    "review_notes": {"type": ["string", "null"]},
+    "ai_evidence": {"type": ["object", "null"]}
+  }
+}

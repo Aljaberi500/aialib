@@ -1,0 +1,327 @@
+version: 1
+defaults:
+  cwe_id: CWE-000
+  owasp_tag: A10:2021-Insufficient Logging & Monitoring
+  sink_api: unspecified
+  ai_cause:
+    - unspecified
+  propagation_vector:
+    - unknown
+  human_ai_factor:
+    - unspecified
+  mitigation_short: Review and harden the generated code before deployment.
+  atlas_techniques:
+    - ATLAS:Model Misuse
+rules:
+  B105:
+    cwe_id: CWE-798
+    owasp_tag: A02:2021-Cryptographic Failures
+    sink_api: psycopg2.connect
+    ai_cause:
+      - overconfident_generation
+    propagation_vector:
+      - static_secret_leak
+    human_ai_factor:
+      - missed_review
+    mitigation_short: Avoid hardcoded secrets; use environment variables or vaults.
+    atlas_techniques:
+      - ATLAS:Sensitive Data Exposure
+  B306:
+    cwe_id: CWE-377
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: tempfile.mktemp
+    ai_cause:
+      - template_reuse
+    propagation_vector:
+      - filesystem
+    human_ai_factor:
+      - inattentive_copy_paste
+    mitigation_short: Use NamedTemporaryFile or mkstemp to create secure temp files.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  B307:
+    cwe_id: CWE-94
+    owasp_tag: A03:2021-Injection
+    sink_api: eval
+    ai_cause:
+      - prompt_misinterpretation
+    propagation_vector:
+      - code_execution
+    human_ai_factor:
+      - blind_trust
+    mitigation_short: Disallow eval/exec on user input; parse safely instead.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  B506:
+    cwe_id: CWE-502
+    owasp_tag: A08:2021-Software and Data Integrity Failures
+    sink_api: yaml.load
+    ai_cause:
+      - training_data_gap
+    propagation_vector:
+      - deserialization
+    human_ai_factor:
+      - lack_of_context
+    mitigation_short: Use safe_load for YAML; validate loaders.
+    atlas_techniques:
+      - ATLAS:Data Poisoning
+  B602:
+    cwe_id: CWE-78
+    owasp_tag: A03:2021-Injection
+    sink_api: subprocess.run
+    ai_cause:
+      - prompt_misinterpretation
+    propagation_vector:
+      - command_injection
+    human_ai_factor:
+      - time_pressure
+    mitigation_short: Avoid shell=True with untrusted input; use shlex and arg lists.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  B404:
+    cwe_id: CWE-78
+    owasp_tag: A03:2021-Injection
+    sink_api: os.system
+    ai_cause:
+      - prompt_overgeneralization
+    propagation_vector:
+      - command_injection
+    human_ai_factor:
+      - missed_review
+    mitigation_short: Review use of subprocess and prefer allowlisted commands or libraries.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  B608:
+    cwe_id: CWE-89
+    owasp_tag: A03:2021-Injection
+    sink_api: cursor.execute
+    ai_cause:
+      - template_reuse
+    propagation_vector:
+      - database_query
+    human_ai_factor:
+      - blind_trust
+    mitigation_short: Use parameterized queries or ORM bindings instead of string concatenation.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  B113:
+    cwe_id: CWE-400
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: requests.get
+    ai_cause:
+      - speed_over_safety
+    propagation_vector:
+      - network_dos
+    human_ai_factor:
+      - time_pressure
+    mitigation_short: Set explicit timeouts on outbound requests and handle failures gracefully.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  B301:
+    cwe_id: CWE-502
+    owasp_tag: A08:2021-Software and Data Integrity Failures
+    sink_api: pickle.loads
+    ai_cause:
+      - training_data_gap
+    propagation_vector:
+      - deserialization
+    human_ai_factor:
+      - insufficient_validation
+    mitigation_short: Avoid pickle for untrusted input; prefer safer serialization formats.
+    atlas_techniques:
+      - ATLAS:Data Poisoning
+  B403:
+    cwe_id: CWE-502
+    owasp_tag: A08:2021-Software and Data Integrity Failures
+    sink_api: pickle.loads
+    ai_cause:
+      - template_reuse
+    propagation_vector:
+      - deserialization
+    human_ai_factor:
+      - blind_trust
+    mitigation_short: Replace pickle usage with safe loaders or strict schema validation.
+    atlas_techniques:
+      - ATLAS:Data Poisoning
+  B318:
+    cwe_id: CWE-611
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: xml.etree.ElementTree.parse
+    ai_cause:
+      - context_truncation
+    propagation_vector:
+      - external_entity
+    human_ai_factor:
+      - inattentive_copy_paste
+    mitigation_short: Disable external entity resolution when parsing XML.
+    atlas_techniques:
+      - ATLAS:Supply Chain Manipulation
+  B405:
+    cwe_id: CWE-611
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: xml.sax.make_parser
+    ai_cause:
+      - context_truncation
+    propagation_vector:
+      - external_entity
+    human_ai_factor:
+      - missed_review
+    mitigation_short: Use defusedxml or disable external entity processing when parsing XML.
+    atlas_techniques:
+      - ATLAS:Supply Chain Manipulation
+  B314:
+    cwe_id: CWE-611
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: xml.dom.pulldom.parse
+    ai_cause:
+      - context_truncation
+    propagation_vector:
+      - external_entity
+    human_ai_factor:
+      - insufficient_validation
+    mitigation_short: Avoid direct XML parsing; opt into hardened parsers or disable entity expansion.
+    atlas_techniques:
+      - ATLAS:Supply Chain Manipulation
+  py.dangerous-subprocess.shell:
+    cwe_id: CWE-78
+    owasp_tag: A03:2021-Injection
+    sink_api: subprocess.Popen
+    ai_cause:
+      - prompt_overfit
+    propagation_vector:
+      - command_injection
+    human_ai_factor:
+      - missed_review
+    mitigation_short: Sanitize commands or avoid shell execution.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  py.os.system.shell:
+    cwe_id: CWE-78
+    owasp_tag: A03:2021-Injection
+    sink_api: os.system
+    ai_cause:
+      - prompt_overfit
+    propagation_vector:
+      - command_injection
+    human_ai_factor:
+      - knowledge_gap
+    mitigation_short: Use subprocess with allowlists instead of os.system.
+    atlas_techniques:
+      - ATLAS:Prompt Injection
+  py.yaml.unsafe-load:
+    cwe_id: CWE-502
+    owasp_tag: A08:2021-Software and Data Integrity Failures
+    sink_api: yaml.load
+    ai_cause:
+      - training_data_gap
+    propagation_vector:
+      - deserialization
+    human_ai_factor:
+      - blind_trust
+    mitigation_short: Use yaml.safe_load and validate input schema.
+    atlas_techniques:
+      - ATLAS:Data Poisoning
+  py.tempfile.mktemp:
+    cwe_id: CWE-377
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: tempfile.mktemp
+    ai_cause:
+      - template_reuse
+    propagation_vector:
+      - filesystem
+    human_ai_factor:
+      - knowledge_gap
+    mitigation_short: Prefer NamedTemporaryFile or mkstemp for race-free temp files.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  py.aws.s3.public-acl:
+    cwe_id: CWE-276
+    owasp_tag: A01:2021-Broken Access Control
+    sink_api: boto3.client
+    ai_cause:
+      - prompt_overgeneralization
+    propagation_vector:
+      - cloud-misconfig
+    human_ai_factor:
+      - insufficient_validation
+    mitigation_short: Enforce private ACLs by default; review bucket policies.
+    atlas_techniques:
+      - ATLAS:Model Operational Misuse
+  ai.dependency.hallucination:
+    cwe_id: CWE-829
+    owasp_tag: A06:2021-Vulnerable and Outdated Components
+    sink_api: import
+    ai_cause:
+      - hallucinated_dependency
+    propagation_vector:
+      - supply_chain
+    human_ai_factor:
+      - insufficient_validation
+    mitigation_short: Verify packages exist and are trusted before importing or installing.
+    atlas_techniques:
+      - ATLAS:Supply Chain Manipulation
+  ai.unsafe.verify_false:
+    cwe_id: CWE-295
+    owasp_tag: A02:2021-Cryptographic Failures
+    sink_api: requests.get
+    ai_cause:
+      - unsafe_default
+    propagation_vector:
+      - network
+    human_ai_factor:
+      - time_pressure
+    mitigation_short: Enforce TLS verification and pin trusted certificates.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  ai.unsafe.debug_true:
+    cwe_id: CWE-489
+    owasp_tag: A05:2021-Security Misconfiguration
+    sink_api: flask.Flask
+    ai_cause:
+      - unsafe_default
+    propagation_vector:
+      - application_config
+    human_ai_factor:
+      - inattentive_copy_paste
+    mitigation_short: Disable debug modes in production and gate them behind env flags.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  ai.unsafe.permissive_cors:
+    cwe_id: CWE-942
+    owasp_tag: A01:2021-Broken Access Control
+    sink_api: fastapi.middleware.cors.CORSMiddleware
+    ai_cause:
+      - unsafe_default
+    propagation_vector:
+      - cross_origin
+    human_ai_factor:
+      - insufficient_validation
+    mitigation_short: Restrict CORS origins to explicit allowlists.
+    atlas_techniques:
+      - ATLAS:Operational Oversight
+  ai.context.misalignment:
+    cwe_id: CWE-20
+    owasp_tag: A04:2021-Insecure Design
+    sink_api: contextual
+    ai_cause:
+      - prompt_misinterpretation
+    propagation_vector:
+      - business_logic
+    human_ai_factor:
+      - missed_review
+    mitigation_short: Verify security-focused prompts output hardened controls and enforce guardrails.
+    atlas_techniques:
+      - ATLAS:Model Misuse
+  ai.multifile.bypass:
+    cwe_id: CWE-116
+    owasp_tag: A04:2021-Insecure Design
+    sink_api: sanitizer_chain
+    ai_cause:
+      - context_truncation
+    propagation_vector:
+      - multi_component
+    human_ai_factor:
+      - lack_of_context
+    mitigation_short: Ensure sanitizers are enforced at every boundary and cannot be bypassed in other files.
+    atlas_techniques:
+      - ATLAS:Supply Chain Compromise

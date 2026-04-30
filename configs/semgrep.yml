@@ -1,0 +1,28 @@
+rules:
+  - id: py.dangerous-subprocess.shell
+    message: Unsafe shell execution with subprocess
+    severity: ERROR
+    languages: [python]
+    pattern: subprocess.Popen(..., shell=True, ...)
+  - id: py.os.system.shell
+    message: os.system exposes shell injection risk
+    severity: WARNING
+    languages: [python]
+    pattern: os.system(...)
+  - id: py.yaml.unsafe-load
+    message: yaml.load without Loader enables unsafe deserialization
+    severity: ERROR
+    languages: [python]
+    pattern: yaml.load(...)
+  - id: py.tempfile.mktemp
+    message: tempfile.mktemp creates insecure predictable names
+    severity: WARNING
+    languages: [python]
+    pattern: tempfile.mktemp(...)
+  - id: py.aws.s3.public-acl
+    message: Public-read ACL exposes S3 bucket
+    severity: WARNING
+    languages: [python]
+    patterns:
+      - pattern: boto3.client("s3")
+      - pattern: $CLIENT.put_bucket_acl(..., ACL="public-read", ...)

@@ -1,0 +1,54 @@
+version: 1
+rules:
+  - rule_id: ai.dependency.hallucination
+    description: "Code imports hallucinated packages that do not exist."
+    severity: HIGH
+    detector: dependency
+    packages:
+      - secureai_helper
+      - llmshield
+      - trustpilotai
+      - hypersafe
+  - rule_id: ai.unsafe.verify_false
+    description: "HTTPS verification disabled via verify=False."
+    severity: MEDIUM
+    detector: substring
+    pattern: "verify=False"
+  - rule_id: ai.unsafe.debug_true
+    description: "Framework debug mode left enabled."
+    severity: MEDIUM
+    detector: substring
+    pattern: "debug=True"
+  - rule_id: ai.unsafe.permissive_cors
+    description: "CORS configuration trusts any origin."
+    severity: MEDIUM
+    detector: substring
+    pattern: "allow_origins=['*']"
+  - rule_id: ai.context.misalignment
+    description: "Prompt requests secure handling but code violates the guidance."
+    severity: HIGH
+    detector: misalignment
+    secure_keywords:
+      - secure
+      - hardened
+      - validated
+      - compliance
+    unsafe_markers:
+      - "shell=True"
+      - "verify=False"
+      - "yaml.load("
+      - "mktemp("
+  - rule_id: ai.multifile.bypass
+    description: "Multi-file snippet declares sanitizers but bypasses them elsewhere."
+    severity: HIGH
+    detector: multifile
+    file_markers:
+      - "# file:"
+      - "### file"
+    sanitizer_tokens:
+      - sanitize
+      - sanitizer
+    bypass_tokens:
+      - bypass
+      - raw_input
+      - unsanitized
