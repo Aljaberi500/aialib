@@ -15,7 +15,7 @@ data/completions.jsonl
 data/annotations.jsonl
 data/run_manifest.json
 data/review_queue.jsonl
-reports/
+/reports/
 out/threat_library.csv
 out/threat_library.sqlite
 out/threat_library.sarif
