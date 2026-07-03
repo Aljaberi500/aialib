@@ -22,7 +22,7 @@ keywords:
   - CI/CD
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.XXXXXXX
+    value: 10.5281/zenodo.20127950
     description: "Zenodo archive of the v0.1.0 release."
 preferred-citation:
   type: article
