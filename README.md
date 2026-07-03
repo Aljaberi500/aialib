@@ -173,7 +173,7 @@ If you use `aialib` or its threat library, please cite:
                   Pipeline for LLM-Generated Code},
   year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.XXXXXXX},
+  doi          = {10.5281/zenodo.20127950},
   url          = {https://github.com/aljaberi500/aialib}
 }
 ```
