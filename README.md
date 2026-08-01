@@ -138,7 +138,7 @@ normalized hash)`. The full JSON Schema is in
 | `src/aialib/` | Pipeline modules: generation, analysis, annotation, quality, export, pipeline, review |
 | `configs/` | Bandit/Semgrep rulepacks, annotation rulebook, AI-risk rules, ATLAS catalog |
 | `schemas/` | JSON Schema for threat-library entries |
-| `data/` | Prompt spec (`prompts_v2.yaml`, 17 families × 4 variants), expanded prompts, mappings, registry, local samples |
+| `data/` | Prompt spec (`prompts_v2.yaml`, 16 families × 4 variants), expanded prompts, mappings, registry, local samples |
 | `docs/` | Codebase overview, reproducibility checklist, mapping rationale |
 | `examples/` | Hand-picked vulnerable snippets you can run through `process_snippet` |
 | `sample_outputs/` | Pre-built CSV/SQLite/SARIF + validation reports for inspection |
