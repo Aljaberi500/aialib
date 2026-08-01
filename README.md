@@ -77,6 +77,21 @@ fills that gap by:
 4. Emitting CI/CD-ready outputs (SARIF for IDEs and PR checks; SQLite for
    tool integrations; CSV for analysts and notebooks).
 
+**Where the labels come from:**
+
+- [`docs/annotator_rules.md`](docs/annotator_rules.md) — how the rule-based
+  annotator works, with worked examples. The rulebook itself is
+  [`configs/annotation_rules.yaml`](configs/annotation_rules.yaml).
+- [`docs/template_design.md`](docs/template_design.md) — where the 16
+  prompt template families come from and why each targets the CWEs it does.
+  The template spec is [`data/prompts_v2.yaml`](data/prompts_v2.yaml).
+
+The annotation layer is configurable: edit `configs/annotation_rules.yaml`
+to change CWE/OWASP/ATLAS mappings or add organization-specific AI-cause
+labels, adjust `configs/bandit.yml` / `configs/semgrep.yml` to enable or
+disable detector rules, and filter exports to selected CWEs or severities
+by querying the SQLite/CSV outputs.
+
 ---
 
 ## Pipeline at a glance
