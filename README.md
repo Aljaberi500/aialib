@@ -17,7 +17,7 @@ an annotated **threat library** that links each finding to:
 - a **human–AI factor** (`blind_trust`, `knowledge_gap`, `time_pressure`, ...),
 - one or more **MITRE ATLAS** techniques.
 
-The current public release ships **729 annotated findings** mined from
+The current public release ships **504 annotated findings** mined from
 **2,144 generated samples** across four LLM providers (OpenAI `gpt-4o-mini`
 and `gpt-4.1`, Anthropic `claude-sonnet-4`, MBZUAI-IFM `K2-Think v2`) and
 exports them in CSV, SQLite, and SARIF for direct CI/CD integration.
