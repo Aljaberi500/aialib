@@ -1,7 +1,26 @@
 %%
-%% aialib — ASE 2026 Tools and Datasets Track submission.
-%% Built on the ACM `acmart` master template (sample-manuscript.tex), adapted
-%% to the `sigconf,review` option set required by the call for papers.
+%% This is file `sample-manuscript.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `all,proceedings,bibtex,manuscript')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-manuscript.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
 %%
 %% Commands for TeXCount
 %TC:macro \cite [option:text,text]
@@ -14,7 +33,17 @@
 %TC:envir math 0 word
 %TC:envir comment 0 0
 %%
-
+%% The first command in your LaTeX source must be the \documentclass
+%% command.
+%%
+%% For submission and review of your manuscript please change the
+%% command to \documentclass[manuscript, screen, review]{acmart}.
+%%
+%% When submitting camera ready or to TAPS, please change the command
+%% to \documentclass[sigconf]{acmart} or whichever template is required
+%% for your publication.
+%%
+%%
 \documentclass[sigconf,review,anonymous=false]{acmart}
 
 %% \BibTeX command to typeset BibTeX logo in the docs
@@ -27,11 +56,11 @@
 \setcopyright{rightsretained}
 \copyrightyear{2026}
 \acmYear{2026}
-\acmDOI{XXXXXXX.XXXXXXX}
+\acmDOI{XXXXXXX.XXXXXXX} %still not issued
 \acmConference[ASE '26]{The 41st IEEE/ACM International Conference on
-  Automated Software Engineering, Tools and Datasets Track}{November
-  9--13, 2026}{S\~ao Paulo, Brazil}
-\acmISBN{978-1-XXXX-XXXX-X/26/11}
+  Automated Software Engineering, Tools and Datasets Track}{October
+  12--16, 2026}{Munich, Germany}
+\acmISBN{978-1-XXXX-XXXX-X/26/11} 
 
 %% Demonstration submissions are short. Disable the ACM reference block
 %% so the page count stays inside the four-page limit during review.
@@ -44,6 +73,30 @@
 \usepackage{xcolor}
 \usepackage{microtype}
 \usepackage{url}
+\usepackage{pifont}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+
+% TikZ styles
+\tikzset{
+  block/.style={
+    draw,
+    rounded corners,
+    align=center,
+    minimum width=0.9\columnwidth,
+    minimum height=1cm,
+    fill=gray!10
+  },
+  line/.style={
+    -Latex,
+    thick
+  }
+}
+%\newcommand{\ys}[1]{{\color{blue}YS:#1}}
+
+
 
 \lstdefinestyle{lstlibrary}{
   basicstyle=\ttfamily\scriptsize,
@@ -64,59 +117,58 @@
 %% ----------------------------------------------------------------------
 %% Title and author block
 %% ----------------------------------------------------------------------
-\title[aialib: An AI-Aware Threat Library and Pipeline]
-      {aialib: A Reproducible Pipeline and Annotated Threat Library
-       for AI-Generated Code Vulnerabilities}
+\title{\textsc{AIALIB}: A Threat Library for AI-Generated Code}
 
 \author{Ali Aljaberi}
-\email{aljabriali500@gmail.com}
-\orcid{0000-0000-0000-0000}
+\email{Ali.Aljaberi@mbzuai.ac.ae}
 \affiliation{%
   \institution{Mohamed bin Zayed University of Artificial Intelligence
                (MBZUAI)}%
   \city{Abu Dhabi}%
   \country{United Arab Emirates}}
 
-\renewcommand{\shortauthors}{Aljaberi}
+\author{Jian Kang}
+\email{Jian.Kang@mbzuai.ac.ae}
+\affiliation{%
+  \institution{Mohamed bin Zayed University of Artificial Intelligence
+               (MBZUAI)}%
+  \city{Abu Dhabi}%
+  \country{United Arab Emirates}}
+  
+\author{Youcheng Sun}
+\email{Youcheng.Sun@mbzuai.ac.ae}
+\affiliation{%
+  \institution{Mohamed bin Zayed University of Artificial Intelligence
+               (MBZUAI)}%
+  \city{Abu Dhabi}%
+  \country{United Arab Emirates}}
+\renewcommand{\shortauthors}{Aljaberi et al.}
 
 %% ----------------------------------------------------------------------
 %% Abstract — written in the thesis voice (formal, third-person,
 %% multi-clause). Ends with the three URLs the call for papers requires.
 %% ----------------------------------------------------------------------
 \begin{abstract}
-The rapid integration of large language models into software development
-has produced a steady empirical record showing that generated code is
-frequently insecure, yet the existing literature has remained focused
-on prevalence rather than on the structured representation of why such
-weaknesses arise, how they propagate through development workflows, and
-how they correspond to AI-specific threat models. This paper presents
-\textsc{aialib}, a reproducible pipeline and annotated threat library
-that addresses these gaps as an integrated artifact rather than as a
-collection of point measurements. From a single prompt manifest the
-pipeline performs deterministic prompt expansion across approximately
-sixteen security-relevant template families, generates code under
-matched parameters from one or more LLM providers, scans every
-completion through a Bandit, Semgrep, and AI-aware risk-detector
-ensemble, and emits annotated entries that carry conventional security
-labels alongside AI-cause, propagation, human--AI factor, and MITRE
-ATLAS metadata. The current release ships 504 annotated findings drawn
-from 2{,}144 generated samples across four providers (OpenAI
-\texttt{gpt-4o-mini} and \texttt{gpt-4.1}, Anthropic
-\texttt{claude-sonnet-4-20250514}, and MBZUAI-IFM
-\texttt{K2-Think-v2}), together with the pipeline that produced them,
-the JSON Schema, the validation reports, and CSV, SQLite, and SARIF
-exports designed for direct CI/CD integration. The artifact is
-Apache-2.0 licensed for code and CC BY 4.0 for the dataset, and is
-reproducible from a single \texttt{make run} or \texttt{docker run}
-invocation under a fixed seed.
+Large language models (LLMs) are increasingly integrated into software
+development workflows, yet a growing body of evidence shows that the code
+they generate often contains security vulnerabilities. Prior work has
+primarily focused on measuring the prevalence of such issues, providing
+useful evidence of risk but limited support for understanding their causes,
+tracking how they propagate through development workflows, or integrating
+this knowledge into practical security processes.
+
+To address these gaps, we present \textsc{aialib}, an annotated threat
+library for AI-generated code. \textsc{aialib} systematically generates,
+analyzes, and structures potential vulnerabilities from LLM-produced code, enriching each finding with conventional security taxonomies (CWE and OWASP) together with AI-specific information describing why the vulnerability was generated, how it propagates through code reuse and refactoring, and how it relates to AI-system threat models.
+
 
 \smallskip\noindent
 \textbf{Code and dataset:}
-\url{https://github.com/aljaberi500/aialib}\hfill\\
+\url{https://github.com/Aljaberi500/aialib}\hfill\\
 \textbf{Zenodo archive (DOI):}
-\url{https://doi.org/10.5281/zenodo.XXXXXXX}\hfill\\
+\url{https://doi.org/10.5281/zenodo.20127950}\hfill\\
 \textbf{Screencast (\textless\,5\,min):}
-\url{https://youtu.be/XXXXXXXXXXX}
+\url{https://youtu.be/0DpGrvZd8lo}
 \end{abstract}
 
 %% ----------------------------------------------------------------------
@@ -155,58 +207,73 @@ invocation under a fixed seed.
 \section{Introduction}
 %% ======================================================================
 
-Large language models have rapidly become embedded in contemporary
-software development practice, and the empirical literature has now
-established that the code they emit can contain non-trivial rates of
-insecure implementations across a wide range of security-sensitive
-tasks~\cite{pearce2022asleep,khoury2023copilot,siddiq2022securityeval}.
-What has remained comparatively under-developed, however, is the
-structured representation of \emph{why} such weaknesses arise, how they
-propagate through reuse and refactoring, and how they correspond to
-AI-specific threat models such as MITRE ATLAS~\cite{mitreatlas}.
-Vulnerability counts have proven useful for documenting the existence
-of the problem, but they do not, on their own, support the comparative
-analysis, operational triage, or AI-aware governance that an emerging
-generation of secure-development workflows increasingly demands.
+Large language models are now routinely used to write, complete, and
+refactor production code, and the empirical literature has shown that the code they emit can contain non-trivial rates of security-sensitive defects~\cite{pearce2022asleep,khoury2023copilot,siddiq2022securityeval}.
+This evidence base is dominated by \emph{prevalence} measurements:
+counts of insecure completions on fixed benchmarks. Prevalence is
+necessary, but it leaves three operational questions unanswered.
+\ding{192}~\emph{Why} did the model emit the weakness such as an unsafe default, a
+hallucinated dependency, a reused template, a truncated context? \ding{193}~How
+does that weakness \emph{propagate} when the snippet is reused or
+refactored downstream? \ding{194}~And how does it map onto AI-specific threat
+models such as MITRE ATLAS~\cite{mitreatlas}, an adversarial-threat taxonomy for AI systems?
 
-The accompanying master's thesis~\cite{aljaberi2026thesis} formulates
-this concern as a sequence of research questions that progress from
-detection to interpretation, from interpretation to structured mapping,
-and from mapping to operational use. The thesis frames its central
-contribution as an AI-aware vulnerability annotation methodology that
-links code-level findings to AI-specific causal mechanisms,
-socio-technical propagation pathways, and ATLAS-aligned threat models
-within a reproducible pipeline. The artifact described here,
-\textsc{aialib}, is the executable embodiment of that methodology and
-the dataset it produces.
+Without structured answers, security teams cannot triage AI-generated
+findings differently from classical ones, code-LLM vendors cannot
+compare regressions across model versions on a stable protocol, and
+CI/CD policies cannot express AI-aware rules such as ``fail the build
+if \texttt{unsafe\_default} findings regress''. Detector
+tools return CWE~\cite{cwe} labels but no causal
+or propagation context; LLM red-team suites target adversarial probing rather than production coding workflows; and
+AI-system threat frameworks~\cite{mitreatlas} sit a layer above the
+code artifact and are not natively linkable to detector output.
 
+We address this gap with \textsc{aialib}, a
+reproducible generation--detection--annotation pipeline alongside the
+dataset it produces. The release contributes:
+\begin{enumerate}[leftmargin=*, topsep=5pt, itemsep=6pt,
+                  parsep=0pt, partopsep=0pt]
+  \item An \emph{applicable, reproducible pipeline.} A tool that
+        generates code from any configured LLM, scans it with two established rule-based static analyzers (Bandit~\cite{bandit}, Semgrep~\cite{semgrep}) plus a custom AI-risk detector, and emits
+        annotated findings in a fixed schema. It can be applied to new
+        models or new prompts to produce comparable finding sets, used
+        to review individual LLM-generated snippets in an IDE-style
+        workflow, or re-run deterministically (fixed seed, pinned
+        parameters, Docker image) to reproduce our published results.
+  \item An \emph{AI-cause vocabulary}: a taxonomy describing why an LLM        generated an insecure construct rather than merely what                vulnerability it contains and \emph{why} a model
+        emitted a weakness, not only what the weakness is:
+        \path{unsafe_default}, \path{hallucinated_dependency},
+        \path{template_reuse}, \path{context_} \path{truncation},
+        \path{prompt_misinterpretation}, plus provider-specific
+        categories. A curated CWE-to-ATLAS crosswalk connects these
+        labels to conventional CWE and OWASP~\cite{owasptop10} tags and to MITRE ATLAS
+        techniques, enabling analysis beyond conventional vulnerability classification.
+  \item A \emph{504-finding annotated dataset} drawn from 2{,}144
+        Python completions across four production LLMs and four
+        propagation variants (base, reuse, refactor, secure-refactor),
+        exported as CSV, indexed SQLite, and SARIF~\cite{sarif} for direct use in
+        CI/CD pipelines and IDE integrations.
+  \item \emph{Analyst tooling} for human-in-the-loop review and trust
+      calibration, reporting per-rule precision rather than a single
+      aggregate number so users of the dataset can weight findings by
+      trustworthiness.
+\end{enumerate}
 The artifact is positioned not as another prevalence study but as a
 contribution to AI-aware vulnerability annotation and threat-knowledge
 structuring. Its value lies in providing a disciplined way to connect
 raw detector outputs to AI-specific causes, propagation labels, and
 ATLAS techniques while preserving the provenance required for audit and
-re-execution. Concretely, the release contributes (i)~a reproducible
-generator--detector--annotator pipeline with deterministic prompt
-expansion, pinned generation parameters, and a JSON-Schema-validated
-output format; (ii)~an AI-cause vocabulary
-(\texttt{unsafe\_default}, \texttt{hallucinated\_dependency},
-\texttt{template\_reuse}, \texttt{context\_truncation},
-\texttt{prompt\_misinterpretation}, and additional categories observed
-in particular providers) together with a curated CWE-to-ATLAS
-crosswalk; (iii)~a 504-finding annotated dataset spanning four
-production LLMs and four propagation variants, exported in CSV,
-SQLite, and SARIF for direct CI/CD use; and (iv)~analyst tooling for
-human-in-the-loop review and trust calibration.
+re-execution.
+
 
 %% ======================================================================
 \section{Artifact Overview}
 %% ======================================================================
 
-\textsc{aialib} is implemented as an offline-first Python~3.11
-pipeline (\texttt{src/aialib}) composed of seven loosely coupled
+\textsc{aialib} is implemented as an offline-first Python~3.11+
+pipeline (src/aialib) composed of seven loosely coupled
 stages, each invocable as \texttt{python\,-m\,aialib.<stage>} or as a
-Make target. Figure~\ref{fig:arch} summarizes the data flow from the
-prompt manifest to the exported library. The design treats prompt
+Make target. Figure~\ref{fig:ai-pipeline} summarizes the data flow from the prompt manifest to the exported library. The design treats prompt
 expansion, code generation, scanning, normalization, annotation,
 validation, and export as connected parts of a single analytical
 chain in which raw outputs, intermediate transformations, and final
@@ -214,23 +281,42 @@ annotations remain linked throughout the experiment.
 
 \begin{figure}[t]
 \centering
-\begin{lstlisting}[style=lstlibrary,basicstyle=\ttfamily\footnotesize]
-prompts_v2.yaml
-   |--[expand]   -> prompts_expanded.jsonl  (deterministic, seed=1337)
-   |--[generate] -> completions.jsonl       (provider-pinned params)
-   |--[scan]     -- Bandit ----+
-   |             -- Semgrep --- + -> findings.jsonl
-   |             -- AI-risk ---+
-   |--[annotate] -> annotations.jsonl       (CWE, OWASP, ATLAS, AI tags)
-   |--[validate] -> coverage + novelty reports + schema gate
-   '--[export]   -> threat_library.{csv, sqlite, sarif}
-\end{lstlisting}
-\caption{End-to-end pipeline stages and their persistent artifacts.}
-\label{fig:arch}
+
+\begin{tikzpicture}[font=\small, node distance=6mm]
+
+\node[block] (b1) {\textbf{Prompt Generation}\\[2pt]
+Templated, security-relevant prompts\\
+(linked to CWEs, difficulty levels)};
+
+\node[block, below=of b1] (b2) {\textbf{LLM Code Generation}\\[2pt]
+Multiple LLMs (e.g., GPT-4o, GPT-o4 mini,\\ K2-Think-V2, Sonnet 4.0),\\
+multiple samples per prompt};
+
+\node[block, below=of b2] (b3) {\textbf{Static Analysis}\\[2pt]
+Bandit, Semgrep;\\
+findings normalized to CWE, severity};
+
+\node[block, below=of b3] (b4) {\textbf{AI-Aware Annotation}\\[2pt]
+Add AI-Cause, Propagation Vector, Human AI Factor,\\
+and ATLAS Technique};
+
+\node[block, below=of b4] (b5) {\textbf{Threat Library Export}\\[2pt]
+CSV/SQLite + SARIF for CI/CD};
+
+\draw[line] (b1) -- (b2);
+\draw[line] (b2) -- (b3);
+\draw[line] (b3) -- (b4);
+\draw[line] (b4) -- (b5);
+
+
+\end{tikzpicture}
+
+\caption{Overview of the methodology used to construct the AI-risk-aware threat library. The pipeline combines prompt generation, multi-LLM code synthesis, static vulnerability analysis, AI-specific threat annotation, and standardized data export.}
+\label{fig:ai-pipeline}
 \end{figure}
 
 \textbf{Prompt generation framework.} The prompt manifest declares
-approximately sixteen security-relevant template families covering
+16 security-relevant template families covering
 authentication-related SQL construction, command execution, path
 handling, YAML and pickle deserialization, insecure file upload,
 secret handling, server-side request forwarding, temporary-file usage,
@@ -242,15 +328,39 @@ that prevent template-rich families from dominating the corpus, and
 each is decorated with deterministic mutators that introduce
 constraint nudges, ambiguous requirements, and contextual noise. The
 final stratified selection contains 134 base prompts, expanded into
-four propagation variants---\texttt{base}, \texttt{reuse},
-\texttt{refactor}, and \texttt{secure\_refactor}---to yield 536 prompt
-instances per provider per run.
+four propagation variants: \texttt{base}, \texttt{reuse},
+\texttt{refactor}, and \path{secure_refactor}, to yield 536 prompt
+instances per provider per run. 
+
+\textbf{Propagation Variants.} The four propagation variants encode different points in the
+developer-AI workflow at which insecure code may persist. \emph{Base}
+is the prompt as authored, modeling a developer who accepts the first
+completion; \emph{reuse} re-frames the same task to model
+copy-paste lift of a snippet into a new function context;
+\emph{refactor} applies a generic maintenance instruction, modeling
+routine cleanup that does not include a security review; and
+\emph{secure refactor} explicitly asks the model to harden the
+snippet, modeling a security-aware revision pass. The four variants
+share a lineage identifier so a given weakness can be tracked across
+stages, which is what \path{reports/propagation_report.json}
+aggregates as a copy-paste-style proxy for socio-technical
+propagation.
+
+\textbf{Template provenance.} The prompt templates were manually
+authored by the authors and selected to cover common Python security
+weaknesses observed in prior generated-code
+studies~\cite{pearce2022asleep,siddiq2022securityeval}, common
+CWE/OWASP categories, and AI-specific failure modes such as
+dependency hallucination, unsafe defaults, context misalignment, and
+multi-file bypasses. Each family is associated with expected sinks
+and target CWEs, and stratification caps prevent high-yield families
+from dominating the corpus. The full template family-to-CWE table ships with the artifact (\path{docs/template_design.md}).
 
 \textbf{Provider abstraction.} A unified \texttt{Provider} interface
 implements deterministic offline generation
 (\texttt{LocalGenerator}), and live providers for
 OpenAI~(\texttt{gpt-4o-mini}, \texttt{gpt-4.1}),
-Anthropic~(\texttt{claude-sonnet-4-20250514}), and
+Anthropic~(\texttt{claude-sonnet-4}), and
 MBZUAI-IFM~(\texttt{K2-Think-v2}). Every adapter logs the model
 identity, temperature, top-p, maximum token count, system prompt, and
 seed alongside each completion so that runs from different providers
@@ -259,25 +369,27 @@ processing.
 
 \textbf{Detection and annotation.} Bandit and Semgrep are executed
 under vendored rule packs on sandboxed copies of every completion,
-and a custom \texttt{detect\_ai\_risks} module fires for hallucinated
+and a custom \path{detect_ai_risks} module fires for hallucinated
 imports, unsafe defaults such as \texttt{debug=True} and
 \texttt{verify=False}, prompt-code misalignment, and multi-file
 sanitization bypass patterns. Findings are merged into a canonical
 record, decorated with token-level and AST-level fingerprints to
 support deduplication and novelty clustering, and passed through a
 rule-based annotator that assigns CWE, OWASP, AI-cause, propagation
-vector, human--AI factor, and ATLAS technique labels under
-\texttt{configs/annotation\_rules.yaml}. A separate ATLAS catalog
+vector, human-AI factor, and ATLAS technique labels under
+\path{configs/annotation_rules.yaml}. A separate ATLAS catalog
 constrains the technique vocabulary so that unknown values are
 rejected at validation.
+
+\textbf{Rule-based Annotation} Each detector emits a rule identifier, affected code span, sink API, severity, and supporting evidence reference. AIALIB normalizes and deduplicates findings using the completion identifier, sink API, rule identifier, token-level hash, and AST-level hash before passing them to the annotation stage. The annotator consults the detector rule or AI-risk rule defined in \path{configs/annotation_rules.yaml}, which maps findings to CWE, OWASP, AI-cause, propagation vector, human–AI factor, mitigation guidance, and MITRE ATLAS technique identifiers. These annotations represent rule-based inferred classifications derived from static analysis and heuristic matching rather than proven root causes or confirmed exploitability; accordingly, all annotated findings are treated as \path{validation_level = static_only}. A validation gate rejects unknown or inconsistent labels, while the rulebook remains user-configurable, allowing researchers to extend mappings, disable rules, or filter annotations by CWE, severity, AI-cause, or detector.
 
 \textbf{Quality gate, export, and review.} The validation stage
 enforces a JSON Schema with twenty-one required fields, checks
 rule-mapping coverage, blocks unrecognized severity values, computes
 novelty clusters keyed by $(\textit{CWE},\,\textit{sink API},\,\textit{normalized hash})$,
 and emits machine-readable reports
-(\texttt{reports/mapping\_coverage.json},
-\texttt{reports/novelty\_report.json}). Export modules write CSV,
+(\path{reports/mapping_coverage.json},
+\path{reports/novelty_report.json}). Export modules write CSV,
 indexed SQLite, and SARIF, the last of which preserves both
 conventional security properties and AI-aware metadata for
 consumption by IDEs and CI/CD systems. A \texttt{review} package
@@ -286,49 +398,82 @@ that detector precision can be quantified at the rule level rather
 than assumed to be uniform across rules.
 
 \textbf{Reproducibility.} Every run writes
-\texttt{data/run\_manifest.json}, recording the random seed, commit
+\path{data/run_manifest.json}, recording the random seed, commit
 SHA, analyzer versions, ruleset hashes, and pipeline version. A unit
-test (\texttt{tests/test\_expand\_deterministic.py}) verifies
-byte-identical prompt expansion for a fixed seed, and the same seed
-is propagated into provider-side generation requests where supported.
+test (\path{tests/}\path{test_expand_deterministic.py})
+verifies byte-identical prompt expansion for a fixed seed, and the
+same seed is propagated into provider-side generation requests where
+supported. Shipped exports are pinned by SHA-256 checksums,
+\path{scripts/reproduce_table1.py} recomputes
+Table~\ref{tab:providers} from the bundled findings and fails on any
+mismatch, and a CI workflow re-runs the unit tests, the validation
+gate, and both checks on every push.
+
+\textbf{Environment.} The bundled release was produced on an
+x86\_64 host running Ubuntu~24.04.3~LTS with CPython~3.12.3,
+glibc~2.39, and GCC~13.3.0, using Bandit~1.7.8 and Semgrep~1.67.0 as
+pinned in \path{requirements.txt}. The published Docker image
+builds on \path{python:3.11-slim} (Debian~12, Python~3.11,
+glibc~2.36) and fixes the reference OS and C library for
+re-execution. The manifest carries a dedicated environment block
+(host OS, CPU architecture, Python, glibc, and compiler versions),
+populated on the executing machine by
+\path{scripts/record_env.py}.
 
 %% ======================================================================
 \section{The Annotated Threat Library}
 %% ======================================================================
 
 The dataset shipped with the artifact
-(\texttt{sample\_outputs/threat\_library.\{csv,sqlite,sarif\}})
+(\path{sample_outputs/threat_library.{csv,sqlite,sarif}})
 contains 504 annotated findings drawn from 2{,}144 generated Python
 samples (134 base prompts $\times$ 4 propagation variants $\times$ 4
 providers). Table~\ref{tab:providers} summarizes the per-provider
 yields and severity composition; the full breakdown is included in
-\texttt{sample\_outputs/reports/}.
+\path{sample_outputs/reports/}.
 
-\begin{table}[t]
-\caption{Per-provider yields and severity composition. \textit{Yield}
-is the proportion of completions that produced at least one merged
-finding. Numbers reproduced from \texttt{reports/master\_summary.md}
-under seed $1337$.}
+\begin{table}[!htp]
+\caption{Per-model results from running the bundled pipeline.
+Each model received the same 536 prompts. \textit{HIGH} and \textit{MED} columns refer to the severity of the
+\textit{Findings}; no LOW-severity findings were emitted in the bundled
+freeze.}
 \label{tab:providers}
 \small
 \begin{tabular}{@{}llrrrrr@{}}
 \toprule
-Provider & Model & Comp. & Find. & Yield & HIGH & MED \\
+Provider & Model  & Findings & Yield & HIGH & MED \\
 \midrule
-OpenAI    & \texttt{gpt-4o-mini}              & 536 & 143 & 0.267 & 47 & 96  \\
-OpenAI    & \texttt{gpt-4.1}                  & 536 & 142 & 0.265 & 41 & 101 \\
-Anthropic & \texttt{claude-sonnet-4-20250514} & 536 & 115 & 0.215 & 56 & 59  \\
-K2Think   & \texttt{K2-Think-v2}              & 536 & 104 & 0.194 & 48 & 56  \\
+OpenAI    & \texttt{gpt-4o-mini}               & 143 & 0.267 & 47 & 96  \\
+OpenAI    & \texttt{gpt-4.1}                   & 142 & 0.265 & 41 & 101 \\
+Anthropic & \texttt{claude-sonnet-4}  & 115 & 0.215 & 56 & 59  \\
+K2Think   & \texttt{K2-Think-v2}               & 104 & 0.194 & 48 & 56  \\
 \bottomrule
 \end{tabular}
+
 \end{table}
 
 \textbf{Schema.} Each annotated entry conforms to
-\texttt{schemas/threat\_entry.schema.json} and carries twenty-one
+\path{schemas/threat_ entry.schema.json} and carries twenty-one
 required fields. Listing~\ref{lst:schema} reproduces a representative
 record. Array fields are serialized as repeated values rather than as
 free-form strings so that the library remains queryable from SQL
 without additional parsing.
+
+
+
+\textbf{Vulnerability profile.} The CWE distribution is concentrated
+around a common core (CWE-489, CWE-829, CWE-377, CWE-295, CWE-116,
+CWE-20) shared across the OpenAI and K2Think runs, with additional
+classes (CWE-502, CWE-78) appearing in the Anthropic run. The
+AI-cause distribution is dominated in every run by
+\path{unsafe_default}, with \path{hallucinated_dependency}
+appearing at exactly twenty-four findings per run and
+\path{context_truncation} appearing identically across the OpenAI
+and K2Think runs. The Anthropic run additionally exhibits
+\path{training_data_gap} and \path{prompt_overfit} categories
+under the rulebook, and triggers ATLAS techniques consistent with
+data-poisoning and prompt-injection-style behaviors that are absent
+from the other runs.
 
 \begin{lstlisting}[style=lstlibrary,caption={Annotated entry excerpt
 from \texttt{sample\_outputs/threat\_library.csv}.},label=lst:schema]
@@ -352,27 +497,13 @@ ast_hash              : ef728aa2521c
 review_status         : unreviewed
 \end{lstlisting}
 
-\textbf{Vulnerability profile.} The CWE distribution is concentrated
-around a common core (CWE-489, CWE-829, CWE-377, CWE-295, CWE-116,
-CWE-20) shared across the OpenAI and K2Think runs, with additional
-classes (CWE-502, CWE-78) appearing in the Anthropic run. The
-AI-cause distribution is dominated in every run by
-\texttt{unsafe\_default}, with \texttt{hallucinated\_dependency}
-appearing at exactly twenty-four findings per run and
-\texttt{context\_truncation} appearing identically across the OpenAI
-and K2Think runs. The Anthropic run additionally exhibits
-\texttt{training\_data\_gap} and \texttt{prompt\_overfit} categories
-under the rulebook, and triggers ATLAS techniques consistent with
-data-poisoning and prompt-injection-style behaviors that are absent
-from the other runs.
-
 \textbf{Coverage and novelty.} Under the freeze used for the bundled
 release, the validation gate reports complete rule-to-CWE mapping
 coverage and complete ATLAS catalog membership
-(\texttt{reports/mapping\_coverage.json}). Novelty analysis groups the
+(\path{reports/mapping_coverage.json}). Novelty analysis groups the
 findings into clusters keyed by $(\textit{CWE},\,\textit{sink API},\,\textit{normalized hash})$,
 with the large majority of clusters being singletons in the current
-freeze (\texttt{reports/novelty\_report.json}).
+freeze (\path{reports/novelty_report.json}).
 
 \textbf{Licensing and access.} Code is released under Apache~2.0; the
 threat-library dataset is released under CC~BY~4.0. The repository,
@@ -382,7 +513,7 @@ the Zenodo archive, and a Docker image are linked from the abstract.
 \section{Usage Scenarios}
 %% ======================================================================
 
-\textbf{Scenario A --- one-off snippet review.} A developer or
+\textbf{Scenario A: one-off snippet review.} A developer or
 educator places an LLM suggestion into a single file and runs
 
 \begin{lstlisting}[style=lstlibrary,basicstyle=\ttfamily\scriptsize]
@@ -392,24 +523,24 @@ python -m aialib.pipeline.process_snippet \
 \end{lstlisting}
 
 \noindent which writes a self-contained
-\texttt{out/manual\_run/threat\_library.csv} with the same schema as
+\path{out/manual_run/threat_library.csv} with the same schema as
 the full corpus. This entry point is intended both for IDE-style use
 within a code-review workflow and for the \emph{Try it} demonstration
 that accompanies the screencast.
 
-\textbf{Scenario B --- comparative analysis across providers.}
+\textbf{Scenario B: comparative analysis across providers.}
 Researchers can re-run the comparison by altering only the
 \texttt{--provider} flag in the orchestration target. Because the
 prompt expansion and detector configurations are pinned, any
 differences observed in subsequent reports arise from model behavior
 under the fixed protocol rather than from changes in prompt content
 or analyzer coverage. The bundled
-\texttt{aialib.analysis.compare\_providers} module emits
-\texttt{reports/provider\_comparison.\{json,md\}} for direct inclusion
+\path{aialib.analysis.compare_providers} module emits
+\path{reports/provider_comparison.{json,md}} for direct inclusion
 in dashboards or follow-up papers.
 
-\textbf{Scenario C --- CI/CD integration.} The SARIF export
-(\texttt{out/threat\_library.sarif}) is consumable by GitHub Code
+\textbf{Scenario C: CI/CD integration.} The SARIF export
+(\path{out/threat_library.sarif}) is consumable by GitHub Code
 Scanning, GitLab SAST, and most IDE integrations, and preserves
 AI-aware properties as structured result metadata. Operators can also
 query the SQLite library directly to express AI-cause-aware policies,
@@ -418,7 +549,7 @@ unsafe-default category:
 
 \begin{lstlisting}[style=lstlibrary,basicstyle=\ttfamily\scriptsize]
 SELECT cwe_id, COUNT(*) FROM findings
-WHERE ai_cause LIKE '%unsafe_default%'
+WHERE "ai_cause[]" LIKE '%unsafe_default%'
   AND severity IN ('HIGH','MEDIUM')
 GROUP BY cwe_id;
 \end{lstlisting}
@@ -428,24 +559,127 @@ GROUP BY cwe_id;
 %% ======================================================================
 
 The artifact has been evaluated along three axes that are treated as
-methodological requirements rather than as auxiliary documentation:
+methodological requirements:
 \emph{coverage}, \emph{determinism}, and \emph{cross-provider
-stability}. Coverage is reported by the validation stage and confirms
+stability}. Coverage is reported at the validation stage and confirms
 that every rule encountered in the bundled freeze is mapped under the
 annotation rulebook and that every ATLAS technique label is contained
-in the catalog. Determinism is verified by
-\texttt{tests/test\_expand\_deterministic.py}, which asserts
-byte-identical prompt expansion under a fixed seed; combined with
-provider-side seeding and deterministic fingerprinting, this allows a
-clean re-run from the published Docker image to reproduce the dataset
-row-for-row. Cross-provider stability is documented in
-\texttt{reports/provider\_comparison.md}, where the per-provider
-yields and severity profiles in Table~\ref{tab:providers} are
-reproducible across the same seed; the report additionally includes a
-unique-finding column that flags the K2Think outlier (twenty-one
-unique patterns on one hundred and four findings) and motivates the
-inclusion of multi-provider runs in the bundled release rather than
-reliance on a single model.
+in the catalog: all 504 entries pass the 21 required field
+checks in \path{schemas/}\path{threat_entry.schema.json},
+mapping coverage reaches $100\%$ across the three tool sources, and
+per-tool and per-rule breakdowns are preserved in
+\path{reports/}\path{mapping_coverage.json}.
+Determinism is verified by
+\texttt{tests/}\path{test_expand_deterministic.py},
+which asserts byte-identical prompt expansion under a fixed seed;
+combined with provider-side seeding and deterministic fingerprinting,
+this allows a clean re-run from the published Docker image to
+reproduce the dataset row-for-row. Cross-provider stability is
+documented in
+\path{reports/}\path{provider_comparison.md}, where
+the per-provider yields and severity profiles in
+Table~\ref{tab:providers} are reproducible across the same seed; the
+report additionally includes a unique-finding column that flags the
+K2Think outlier (twenty-one unique patterns on one hundred and four
+findings) and motivates the inclusion of multi-provider runs in the
+bundled release rather than reliance on a single model.
+
+\subsection{Dataset Composition}
+
+The library's distinguishing dimension is the AI-cause layer:
+Table~\ref{tab:ai-cause-distribution} shows its distribution across
+the four provider runs. \path{unsafe_default} dominates every run
+(229 findings overall); \path{hallucinated_dependency} appears at
+exactly twenty-four findings per run, reflecting the fixed
+dependency-hallucination prompt budget; and two causes
+(\path{training_data_gap}, \path{prompt_overfit}) occur only
+in the Anthropic run. Table~\ref{tab:cwe-distribution} gives the
+corresponding weakness-class breakdown, and
+Table~\ref{tab:providers} the per-provider totals: 504 findings from
+2{,}144 completions, 192 HIGH and 312 MEDIUM.
+
+\begin{table}[!t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{AI cause} & \textbf{4o-mini} & \textbf{4.1} & \textbf{K2} & \textbf{sonnet-4} & \textbf{Total} \\
+\midrule
+\texttt{unsafe\_default}           & 75 & 69 & 40 & 45 & 229 \\
+\texttt{hallucinated\_dependency}  & 24 & 24 & 24 & 24 &  96 \\
+\texttt{template\_reuse}           & 21 & 32 & 16 & 13 &  82 \\
+\texttt{context\_truncation}       & 16 & 16 & 16 &  6 &  54 \\
+\texttt{prompt\_misinterpretation} &  7 &  1 &  8 & 11 &  27 \\
+\texttt{training\_data\_gap}       &  0 &  0 &  0 & 15 &  15 \\
+\texttt{prompt\_overfit}           &  0 &  0 &  0 &  1 &   1 \\
+\bottomrule
+\end{tabular}
+\caption{AI-cause distribution per provider run (counts). Column
+heads abbreviate \texttt{gpt-4o-mini}, \texttt{gpt-4.1},
+\texttt{K2-Think-v2}, and \texttt{claude-sonnet-4}.}
+\label{tab:ai-cause-distribution}
+\end{table}
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{l p{5cm} ccccc}
+\toprule
+\textbf{CWE} & \textbf{Description} & \textbf{gpt-4o-mini} & \textbf{gpt-4.1} & \textbf{K2-Think-v2} & \textbf{claude-sonnet-4} & \textbf{Total} \\
+\midrule
+CWE-489 & Active debug code left enabled, exposing sensitive behavior or weakening controls
+& 51 & 44 & 32 & 44 & 171 \\
+CWE-829 & Inclusion of functionality from untrusted sources without validation
+& 24 & 24 & 24 & 24 & 96 \\
+CWE-502 & Deserialization of untrusted data enabling code/object injection
+& 0 & 0 & 0 & 15 & 15 \\
+CWE-377 & Insecure temporary file usage (predictable names, race conditions)
+& 21 & 32 & 16 & 13 & 82 \\
+CWE-20 & Improper input validation leading to misuse or injection
+& 7 & 1 & 8 & 11 & 27 \\
+CWE-116 & Improper output encoding/neutralization enabling injection
+& 16 & 16 & 16 & 6 & 54 \\
+CWE-295 & Improper TLS certificate validation enabling MITM attacks
+& 24 & 25 & 8 & 1 & 58 \\
+CWE-78 & OS command injection via unsafe command construction
+& 0 & 0 & 0 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\caption{CWE distribution by provider (counts and totals) in the
+bundled 504-finding release, seed 1337.}
+\label{tab:cwe-distribution}
+\end{table*}
+
+\subsection{Detector Contribution}
+
+Decomposing the ensemble attributes 406 of the 504 findings
+($80.6\%$) to the AI-aware risk detector and the remaining 98
+($19.4\%$) to Semgrep; the bundled Bandit rule pack is subsumed by
+Semgrep in the present freeze and therefore contributes zero unique
+entries, although it is retained in the orchestration so that
+independent rule additions remain possible. This breakdown supports
+the interpretation that the artifact is dominated by AI-specific risk
+classes rather than by re-packaged classical detector output.
+
+\subsection{Evidence Level}
+
+Every entry carries an explicit \path{validation_level} so that
+downstream users can distinguish \emph{detected} from
+\emph{validated} findings. In the bundled freeze, 229 entries
+($45.4\%$) are \path{sandbox_validated}. Their runtime-checkable
+signals were confirmed in a sandboxed execution, and the remaining
+275 ($54.6\%$) are \path{static_only}, supported by
+static-analyzer evidence alone. No entry is yet human-reviewed: the
+artifact ships the complete human-in-the-loop pipeline
+(\path{aialib.review.queue} for stratified sampling,
+\path{aialib.review.apply} for decision merging, and
+\path{aialib.analysis.}\path{trust_calibration} for
+per-rule precision and disagreement metrics), and per-rule precision
+updates incrementally as reviews accumulate, allowing users to
+weight findings by rule-level trustworthiness rather than treat them
+as uniformly reliable.
 
 \textbf{Limitations.} The current release is intentionally scoped to
 Python. Prompt templates, analyzer configurations, fingerprinting
@@ -453,7 +687,7 @@ logic, and AI-risk detectors are aligned to that scope, which improves
 internal coherence at the cost of language coverage. The
 ATLAS-aligned mappings are likewise a curated crosswalk rather than a
 formal one-to-one taxonomy, and are documented under
-\texttt{docs/mappings/}. Both restrictions are recorded as v0.2
+\path{docs/mappings/}. Both restrictions are recorded as v0.2
 milestones rather than concealed.
 
 %% ======================================================================
@@ -473,8 +707,7 @@ suites~\cite{semgrep,bandit}, it adds an AI-cause taxonomy and an
 ATLAS-aligned annotation layer rather than a pure CWE label. Against
 LLM red-team datasets, including
 CyberSecEval~\cite{bhattcybersec2024}, it focuses on production-style
-coding prompts under controlled propagation variants---reuse,
-refactor, secure-refactor---making the data usable as a regression
+coding prompts under controlled propagation variants making the data usable as a regression
 suite for code-completion vendors and CI/CD policy authors.
 
 %% ======================================================================
@@ -484,25 +717,22 @@ suite for code-completion vendors and CI/CD policy authors.
 The complete artifact, including code, dataset, schemas, configurations,
 sample exports, and a Docker image, is released under Apache~2.0
 (code) and CC~BY~4.0 (dataset) at
-\url{https://github.com/aljaberi500/aialib}. The v0.1.0 release is
+\url{https://github.com/Aljaberi500/aialib}. The v0.1.0 release is
 archived on Zenodo at
-\url{https://doi.org/10.5281/zenodo.XXXXXXX}, and a
-\texttt{CITATION.cff} is provided for the GitHub citation widget. A
-4:30 screencast walking through Scenarios A--C is at
-\url{https://youtu.be/XXXXXXXXXXX}. Planned extensions include
+\url{https://doi.org/10.5281/zenodo.20127950}, and a
+\texttt{CITATION.cff} is provided for the GitHub citation widget. A screencast walking through Scenarios A--C is at
+\url{https://youtu.be/0DpGrvZd8lo}. Planned extensions include
 language coverage beyond Python through additional analyzer rule
 packs, broader provider coverage as new commercial and open-source
 code-LLMs become available, and a hosted threat-library explorer that
 allows interactive filtering by CWE, AI-cause, provider, and ATLAS
-technique. The ATLAS crosswalk is also planned for separate
-publication so that it can be consumed independently of the rest of
-the pipeline.
+technique. 
 
 \begin{acks}
 This artifact accompanies the master's thesis ``Why AI-Generated Code
 Is Vulnerable: Cause Taxonomy, Threat Mapping, and CI/CD Security
 Controls'' completed at the Mohamed bin Zayed University of
-Artificial Intelligence (MBZUAI). The author thanks the Bandit and
+Artificial Intelligence (MBZUAI). The authors thank the Bandit and
 Semgrep maintainers for the rule packs that anchor the detector
 ensemble and the MITRE ATLAS team for maintaining the technique
 catalog.
