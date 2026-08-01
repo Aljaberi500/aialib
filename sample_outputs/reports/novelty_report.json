@@ -1,0 +1,1035 @@
+{
+  "generated_at": "2026-03-24T02:49:15.504442+00:00",
+  "rows": 116,
+  "unique_patterns": 114,
+  "clusters": [
+    {
+      "cwe_id": "CWE-78",
+      "sink_api": "os.system",
+      "normalized_token_hash": "0a44e1ab5c74",
+      "examples": [
+        "b2a7724f2cfc"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "f8485a434a1c",
+      "examples": [
+        "79f0375fc1b4"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "76c697c50903",
+      "examples": [
+        "fed8da8eba33"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "5f19e19f4f54",
+      "examples": [
+        "9813f1ab541f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "f7c285bfdd67",
+      "examples": [
+        "18470e65329f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "e20a9207df61",
+      "examples": [
+        "784595c58c8a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "6f8e827e9ad0",
+      "examples": [
+        "8b9c4eeef1d2"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "fa806c670851",
+      "examples": [
+        "31ff66b44cbe"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "ade8fde49179",
+      "examples": [
+        "9760bec92c47"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "f8934e4a44a5",
+      "examples": [
+        "35e21f7cca5f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "9aa4c7a828ce",
+      "examples": [
+        "9ec098cd7307"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "928f29057faa",
+      "examples": [
+        "7a459b11bfce"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "04f1c39d0f20",
+      "examples": [
+        "36d455bbc3de"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-377",
+      "sink_api": "tempfile.mktemp",
+      "normalized_token_hash": "84e2d6ffca07",
+      "examples": [
+        "a16003cd8676"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "62536594d421",
+      "examples": [
+        "a38444ebc21d"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "e34fc10bc75c",
+      "examples": [
+        "ea4d456a886d"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "5d8460cfc4de",
+      "examples": [
+        "7d7ac0a2f684",
+        "6b9744851d2f"
+      ],
+      "count": 2
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "f765b17b3d3f",
+      "examples": [
+        "3f1b83b48301"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "97687bef13dd",
+      "examples": [
+        "4762640ae1b3"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "2e1f76614953",
+      "examples": [
+        "3219c32d58b2"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "00439bc5a0af",
+      "examples": [
+        "dcdcf5cf2e79"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "121de9630915",
+      "examples": [
+        "b5b45595c000"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "4f5b1178b6e1",
+      "examples": [
+        "8793f1ec3c9d"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "c3cdc2a069e7",
+      "examples": [
+        "4a2721d16098"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "164fe8ab99fa",
+      "examples": [
+        "d3ff5fa96d55"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "2ee6861e312e",
+      "examples": [
+        "78eb6b1cee9a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "f8bfc3dead4f",
+      "examples": [
+        "5070c0eb3024"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-502",
+      "sink_api": "yaml.load",
+      "normalized_token_hash": "bcb880ac9e12",
+      "examples": [
+        "6d5da969cd58"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "c5da011fd92f",
+      "examples": [
+        "e7fca3b8f5ee"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "4a8144ecacad",
+      "examples": [
+        "dedfcd7b69b0"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "c1b14da523cf",
+      "examples": [
+        "ba5b659817e0"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "9bc607b49d46",
+      "examples": [
+        "048bf3f051fc"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "14f63ded120b",
+      "examples": [
+        "62d0106b425e"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "128bf42e2f43",
+      "examples": [
+        "57825adbb703"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "d5fc09e45dec",
+      "examples": [
+        "c487f69d58a5"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "ec998785270c",
+      "examples": [
+        "72cae22d76bb"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "edd68308304a",
+      "examples": [
+        "41a9a9a60a8c"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "a78758a5cdec",
+      "examples": [
+        "1fef923d6a55"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-20",
+      "sink_api": "contextual",
+      "normalized_token_hash": "d81e531bbec6",
+      "examples": [
+        "20cc8a522352"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "e24a74390d57",
+      "examples": [
+        "b7793403eb58"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "c33f294042b3",
+      "examples": [
+        "d9c959cd3c74"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "f3090e5632ac",
+      "examples": [
+        "194690002833"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "764d953b3244",
+      "examples": [
+        "7c4ad5e9ac08"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "6a55f2988838",
+      "examples": [
+        "c35167782da5"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "010ba71ecafc",
+      "examples": [
+        "24ff1f037f0a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "017a24077c1b",
+      "examples": [
+        "f4fbf27d085b"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "e511e0ee45e6",
+      "examples": [
+        "b922deda1cef"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "77930694fa09",
+      "examples": [
+        "7d7aa9010058"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "9e7aabbb6e87",
+      "examples": [
+        "df6e3af05ef9"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "d5cc042b5071",
+      "examples": [
+        "393328f54104"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "6f461755daae",
+      "examples": [
+        "b3a87e6d4cc3"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "1909aec05f97",
+      "examples": [
+        "687fbabb1674"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "ad1d9fd5fe92",
+      "examples": [
+        "dab3533337da"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "f6dfedfbb337",
+      "examples": [
+        "a1ac2e3743c3"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "b673007d5d88",
+      "examples": [
+        "0083a147b8d6"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "95043118d189",
+      "examples": [
+        "686a40989410"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "97533ba33c82",
+      "examples": [
+        "c4a623b09a0d"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "f77adeb75d81",
+      "examples": [
+        "e3e148899f6f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "a942fab1ebbd",
+      "examples": [
+        "b541bc56e318"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "87cb5392db6f",
+      "examples": [
+        "9768d2e3e465"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "d846cf2d542a",
+      "examples": [
+        "df9b4231a63d"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "e6b1cfab3680",
+      "examples": [
+        "908046963809"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "cc76721bbdb4",
+      "examples": [
+        "7092b214043f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "16d24810450f",
+      "examples": [
+        "d148a3144147"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "27fc0924fa3f",
+      "examples": [
+        "9ec72d406228"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "194d011c2ec8",
+      "examples": [
+        "3807a3d45f17"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "9b646a5f1eb2",
+      "examples": [
+        "de525ea69cab"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "6966a5f83c5e",
+      "examples": [
+        "49dbf41dc674"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-116",
+      "sink_api": "sanitizer_chain",
+      "normalized_token_hash": "c5b8cca84099",
+      "examples": [
+        "78231e10f2eb"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "918551b4c721",
+      "examples": [
+        "57773a9aea8b"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "8e86c782ee14",
+      "examples": [
+        "0ec21735cc2e"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "30306fa2e37f",
+      "examples": [
+        "4d17908c2a0f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "79f2aca55513",
+      "examples": [
+        "84c94d7b4079"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "6cf9f3e6461a",
+      "examples": [
+        "84cbf580fd06"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "9538f8df0d99",
+      "examples": [
+        "850e3a511c06"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "8721f73272bd",
+      "examples": [
+        "3be90cce293a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "4e4099ecf2af",
+      "examples": [
+        "4ef0588ab84f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "7922a1a352a7",
+      "examples": [
+        "c0b45fc28b20"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "2ad57103ae67",
+      "examples": [
+        "f7805fe7d373"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "fe99360a931f",
+      "examples": [
+        "8e115c7f588e"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "4f7309013427",
+      "examples": [
+        "5dfc2e9b61de"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "29eab5b0220f",
+      "examples": [
+        "6d3aec4a2336"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "3ff9817e055b",
+      "examples": [
+        "af65a9fde15e"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "5a5e197da8b1",
+      "examples": [
+        "88e35de57307"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "ee890d0c78cb",
+      "examples": [
+        "8d31577f2d6a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "163c112c218a",
+      "examples": [
+        "a0a399eb4934"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "fb0186aa2cd8",
+      "examples": [
+        "c5e2ae1d169b"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "957b6fb5c9e4",
+      "examples": [
+        "da5687e5ebae"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "a97cca01a88c",
+      "examples": [
+        "50074fb86c96"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "5bfcb6bf022e",
+      "examples": [
+        "1da4a90860cf"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "67acba475e65",
+      "examples": [
+        "cb6421f92061"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "90303dcd3dd5",
+      "examples": [
+        "f7f10dd398fe"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "fbbe16a77960",
+      "examples": [
+        "af398a4981fe"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "3db55740422a",
+      "examples": [
+        "863391627ef6"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "c463f1896328",
+      "examples": [
+        "6161d59a4e8f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "c0de1060848a",
+      "examples": [
+        "81317e606371"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "5f52ab08a029",
+      "examples": [
+        "3e006dc646eb"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "81be5a561dd4",
+      "examples": [
+        "517045549141"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "937f82924eb5",
+      "examples": [
+        "50b5848231ee"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "e725cef31874",
+      "examples": [
+        "f96182707f6a"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "a6660c322039",
+      "examples": [
+        "b69410fc537e"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-295",
+      "sink_api": "requests.get",
+      "normalized_token_hash": "c886659495f8",
+      "examples": [
+        "bc29e533380f"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "7650dcfcb51d",
+      "examples": [
+        "c6433be9aa0e",
+        "824729c62954"
+      ],
+      "count": 2
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "4fd1b14f9365",
+      "examples": [
+        "a6a07522ac61"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "dc1eaebbc4b8",
+      "examples": [
+        "de5704f9fa07"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "2b6287b2a888",
+      "examples": [
+        "b745dd3a5359"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "acb1c15da71b",
+      "examples": [
+        "e39af8e63358"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "c23e781d77b1",
+      "examples": [
+        "e92406a0c027"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "53ea7648f14c",
+      "examples": [
+        "485d44e4d71c"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "3c44eab578d4",
+      "examples": [
+        "e670b34e82b1"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "240f6ad87066",
+      "examples": [
+        "80e613d7e2ab"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "a1f4010bf375",
+      "examples": [
+        "9d245fd563f4"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-489",
+      "sink_api": "flask.Flask",
+      "normalized_token_hash": "eb08b474601e",
+      "examples": [
+        "fafdebd71114"
+      ],
+      "count": 1
+    },
+    {
+      "cwe_id": "CWE-829",
+      "sink_api": "import",
+      "normalized_token_hash": "652bf13cabae",
+      "examples": [
+        "537b9c78b68f"
+      ],
+      "count": 1
+    }
+  ]
+}

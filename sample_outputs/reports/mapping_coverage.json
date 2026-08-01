@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-03-24T02:49:15.504210+00:00",
+  "total_records": 116,
+  "tools": {
+    "semgrep": {
+      "total": 29,
+      "mapped": 29,
+      "coverage_pct": 100.0
+    },
+    "ai-risk-detector": {
+      "total": 86,
+      "mapped": 86,
+      "coverage_pct": 100.0
+    },
+    "depcheck": {
+      "total": 1,
+      "mapped": 1,
+      "coverage_pct": 100.0
+    }
+  },
+  "rules": {
+    "py.os.system.shell": {
+      "total": 1,
+      "mapped": 1,
+      "coverage_pct": 100.0
+    },
+    "py.tempfile.mktemp": {
+      "total": 13,
+      "mapped": 13,
+      "coverage_pct": 100.0
+    },
+    "py.yaml.unsafe-load": {
+      "total": 15,
+      "mapped": 15,
+      "coverage_pct": 100.0
+    },
+    "ai.context.misalignment": {
+      "total": 11,
+      "mapped": 11,
+      "coverage_pct": 100.0
+    },
+    "ai.dependency.hallucination": {
+      "total": 25,
+      "mapped": 25,
+      "coverage_pct": 100.0
+    },
+    "ai.multifile.bypass": {
+      "total": 6,
+      "mapped": 6,
+      "coverage_pct": 100.0
+    },
+    "ai.unsafe.debug_true": {
+      "total": 44,
+      "mapped": 44,
+      "coverage_pct": 100.0
+    },
+    "ai.unsafe.verify_false": {
+      "total": 1,
+      "mapped": 1,
+      "coverage_pct": 100.0
+    }
+  },
+  "families": {
+    "context": {
+      "total": 12,
+      "mapped": 12,
+      "coverage_pct": 100.0
+    },
+    "tempfiles": {
+      "total": 13,
+      "mapped": 13,
+      "coverage_pct": 100.0
+    },
+    "yaml": {
+      "total": 15,
+      "mapped": 15,
+      "coverage_pct": 100.0
+    },
+    "dep": {
+      "total": 24,
+      "mapped": 24,
+      "coverage_pct": 100.0
+    },
+    "multi": {
+      "total": 7,
+      "mapped": 7,
+      "coverage_pct": 100.0
+    },
+    "path": {
+      "total": 32,
+      "mapped": 32,
+      "coverage_pct": 100.0
+    },
+    "ssrf": {
+      "total": 11,
+      "mapped": 11,
+      "coverage_pct": 100.0
+    },
+    "unsafe": {
+      "total": 2,
+      "mapped": 2,
+      "coverage_pct": 100.0
+    }
+  }
+}

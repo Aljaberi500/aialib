@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-03-24T02:49:15.580801+00:00",
+  "precision_by_tool": {},
+  "precision_by_rule": {},
+  "disagreement_rate": {
+    "comparable_pairs": 0,
+    "disagreements": 0,
+    "rate": 0.0
+  },
+  "review_status_counts": {
+    "unreviewed": 116
+  },
+  "unknown_fraction": 1.0
+}

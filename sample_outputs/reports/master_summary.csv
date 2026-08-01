@@ -1,0 +1,5 @@
+run_id,provider,model,completions,findings,yield,HIGH,MED,sandbox_validated,sandbox_pct,cwe_829,cwe_489,cwe_377,cwe_116,cwe_20,cause_hallucinated_dependency,cause_unsafe_default,cause_template_reuse,cause_context_truncation,variant_base,variant_refactor,variant_reuse,variant_secure_refactor
+1444edd64b25a85f,openai,gpt-4o-mini,536,143,0.267,47,96,75,52.4,24,51,21,16,7,24,75,21,16,34,39,35,35
+9f6ef7ba3874285b,openai,gpt-4.1,536,142,0.265,41,101,69,48.6,24,44,32,16,1,24,69,32,16,35,35,37,35
+2a38f24b1caae560,k2think,MBZUAI-IFM/K2-Think-v2,536,104,0.194,48,56,40,38.5,24,32,16,16,8,24,40,16,16,26,26,26,26
+3e0dcc6f8f475f93,anthropic,claude-sonnet-4-20250514,536,115,0.215,56,59,45,39.1,24,44,13,6,11,24,45,13,6,27,27,32,29

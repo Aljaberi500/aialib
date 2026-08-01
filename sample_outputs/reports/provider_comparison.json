@@ -1,0 +1,102 @@
+[
+  {
+    "label": "openai_direct|gpt-4o-mini",
+    "path": "runs/openai_run_1",
+    "run_id": "1444edd64b25a85f",
+    "provider": "openai_direct",
+    "model": "gpt-4o-mini",
+    "completions": 536,
+    "findings": 143,
+    "annotations": 143,
+    "yield_ratio": 0.2668,
+    "severity": {
+      "MEDIUM": 96,
+      "HIGH": 47
+    },
+    "validation": {
+      "static_only": 68,
+      "sandbox_validated": 75
+    },
+    "per_tool": {
+      "semgrep": 21,
+      "ai-risk-detector": 122
+    },
+    "novelty_rows": 143,
+    "novelty_unique": 130
+  },
+  {
+    "label": "openai_direct|gpt-4.1",
+    "path": "runs/openai_run_gpt41",
+    "run_id": "9f6ef7ba3874285b",
+    "provider": "openai_direct",
+    "model": "gpt-4.1",
+    "completions": 536,
+    "findings": 142,
+    "annotations": 142,
+    "yield_ratio": 0.2649,
+    "severity": {
+      "MEDIUM": 101,
+      "HIGH": 41
+    },
+    "validation": {
+      "static_only": 73,
+      "sandbox_validated": 69
+    },
+    "per_tool": {
+      "semgrep": 32,
+      "ai-risk-detector": 110
+    },
+    "novelty_rows": 142,
+    "novelty_unique": 134
+  },
+  {
+    "label": "anthropic|claude-sonnet-4-20250514",
+    "path": "runs/anthropic_run_sonnet4",
+    "run_id": "3e0dcc6f8f475f93",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514",
+    "completions": 536,
+    "findings": 115,
+    "annotations": 115,
+    "yield_ratio": 0.2146,
+    "severity": {
+      "MEDIUM": 59,
+      "HIGH": 56
+    },
+    "validation": {
+      "static_only": 70,
+      "sandbox_validated": 45
+    },
+    "per_tool": {
+      "semgrep": 29,
+      "ai-risk-detector": 86
+    },
+    "novelty_rows": 115,
+    "novelty_unique": 113
+  },
+  {
+    "label": "k2think|MBZUAI-IFM/K2-Think-v2",
+    "path": "runs/k2think_run_1",
+    "run_id": "2a38f24b1caae560",
+    "provider": "k2think",
+    "model": "MBZUAI-IFM/K2-Think-v2",
+    "completions": 536,
+    "findings": 104,
+    "annotations": 104,
+    "yield_ratio": 0.194,
+    "severity": {
+      "MEDIUM": 56,
+      "HIGH": 48
+    },
+    "validation": {
+      "static_only": 64,
+      "sandbox_validated": 40
+    },
+    "per_tool": {
+      "semgrep": 16,
+      "ai-risk-detector": 88
+    },
+    "novelty_rows": 104,
+    "novelty_unique": 21
+  }
+]
